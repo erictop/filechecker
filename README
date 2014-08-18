@@ -1,0 +1,32 @@
+filechecker
+===========
+
+Overview
+--------
+Flat file checker Python script
+   Program to validate the contents of a "flat" file.  It takes the file names
+   and record layout specification from a configuration file that is either 
+   specified as a parameter or just exists as fileconf.ini in the 
+   current directory.
+
+   Usage:
+     fffchk.py [-h] [-i <input file>] [-r <report file>] [-c <config file>]
+
+
+Configuration file
+------------------
+You can use the configuration file to specify the files to use for input,
+output (report), and file attributes to be checked.
+
+The configuration has a [file] section and [record] section.  The [file]
+section has the file details, and the [record] section contains the 
+record attributes to check.
+
+    input = input file name
+    report = output report file name
+
+    delimiter = field delimiter character (default is comma)
+    fields = number of fields the record must have (default is 1) 
+    reqflds = a comma separated list of the fields that require a
+              non-null value, the first field starts at 1
+    length = character length of a record
